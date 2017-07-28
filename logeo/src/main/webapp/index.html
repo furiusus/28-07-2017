@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>PaginaLogeo</title>
@@ -16,7 +16,8 @@
 
 </head>
 <body>
-    <div id="paginaPrincipal" class="hidden">
+<div id="aplicacion">
+    <div id="paginaPrincipal" v-show="login">
         <div class="container">
             <div class="row">
                 <div class="col-xs-6 col-xs-offset-3">
@@ -26,93 +27,93 @@
             <div class="row">
                 <div class="col-xs-6 col-xs-offset-3">
                     <form class="form-group">
-                        <input type="text" id="txtUsuario" placeholder="Ingrese Usuario" class="form-control">
+                        <input type="text" id="txtUsuario" placeholder="Ingrese Usuario" class="form-control" v-model="usuario">
                     </form>
                     <br>
-                    <form class="form-group">
-                        <input type="password" id="txtCredencial" placeholder="Ingrese Credencial" class="form-control">
-                    </form>
+                    <form  class="form-group">
+                        <input type="password" id="txtCredencial" placeholder="Ingrese Credencial" class="form-control" v-model="credencial">
+                    </form >
                     <br>
                     <br>
-                    <button class="btn btn-primary text-center">Ingresar</button>
+                    <button class="btn btn-primary text-center" v-on:click="ingresar">Ingresar</button>
                 </div>
             </div>
         </div>
     </div>
-    <div id="paginaMatricula" class="hidden">
+    <div id="paginaMatricula" v-show="matricula">
         <div class="container">
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
                     <div class="row">
                         <label class="fa-border">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" v-on:click="verMatricula">
                                 Matricula
-                            <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
                             </button>
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" v-on:click="verNotas">
                                 Notas
                                 <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
                             </button>
                         </label>
                     </div>
                     <div class="row">
-                            <div class="col-xs-6 text-left">
-                                <h3>Cursos Matriculados</h3>
-                            </div>
-                            <div class="col-xs-6 text-right">
-                                <br>
-                                <button class="btn btn-default ">Nuevo Curso</button>
-                            </div>
+                        <div class="col-xs-6 text-left">
+                            <h3>Cursos Matriculados</h3>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <br>
+                            <button class="btn btn-default ">Nuevo Curso</button>
+                        </div>
                     </div>
                     <table class="table table-condensed">
                         <thead>
-                            <tr class="info">
-                                <td>Curso</td>
-                                <td>Seccion</td>
-                                <td>Docente</td>
-                                <td>DocenteHorario</td>
-                            </tr>
+                        <tr class="info">
+                            <td>Curso</td>
+                            <td>Seccion</td>
+                            <td>Docente</td>
+                            <td>DocenteHorario</td>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>ST­232 Lenguajes de programación orientado a objetos</td>
-                                <td>V</td>
-                                <td>Rony Hancco</td>
-                                <td>Sábado 8:00 ­ 13:00</td>
-                            </tr>
-                            <tr>
-                                <td>CB­303 Física II </td>
-                                <td>U</td>
-                                <td>Oswaldo Arteaga</td>
-                                <td>Lunes 8:00 ­ 12:00</td>
-                            </tr>
-                            <tr>
-                                <td>CB­501 Matemática aplicada </td>
-                                <td>V</td>
-                                <td>Orestes Tapia</td>
-                                <td>Miércoles 14:00 ­ 17:00</td>
-                            </tr>
-                            <tr>
-                                <td>HS­405 Legislación Empresarial</td>
-                                <td>U</td>
-                                <td>Jazmín Antonacci</td>
-                                <td>Viernes 10:00 ­ 14:00</td>
-                            </tr>
+                        <tr>
+                            <td>ST­232 Lenguajes de programación orientado a objetos</td>
+                            <td>V</td>
+                            <td>Rony Hancco</td>
+                            <td>Sábado 8:00 ­ 13:00</td>
+                        </tr>
+                        <tr>
+                            <td>CB­303 Física II </td>
+                            <td>U</td>
+                            <td>Oswaldo Arteaga</td>
+                            <td>Lunes 8:00 ­ 12:00</td>
+                        </tr>
+                        <tr>
+                            <td>CB­501 Matemática aplicada </td>
+                            <td>V</td>
+                            <td>Orestes Tapia</td>
+                            <td>Miércoles 14:00 ­ 17:00</td>
+                        </tr>
+                        <tr>
+                            <td>HS­405 Legislación Empresarial</td>
+                            <td>U</td>
+                            <td>Jazmín Antonacci</td>
+                            <td>Viernes 10:00 ­ 14:00</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-    <div id="paginaNotas" class="">
+    <div id="paginaNotas" v-show="notas">
         <div class="container">
             <div class="row">
                 <label class="fa-border">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" v-on:click="verMatricula">
                         Matricula
                         <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
                     </button>
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" v-on:click="verNotas">
                         Notas
                         <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
                     </button>
@@ -168,5 +169,7 @@
         </div>
     </div>
 
+</div>
+<script type="text/javascript" src="app/js/app.js"></script>
 </body>
 </html>
