@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PaginaLogeo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-3.3.7/css/landing-page.css" rel="stylesheet">
+    <link href="vendor/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="vendor/vue-2.3/vue.min.js"></script>
+    <script type="text/javascript" src="vendor/axios-0.16.2/axios.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div id="paginaPrincipal" class="hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <h1>Ingreso a Sistemas de notas</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <form class="form-group">
+                        <input type="text" id="txtUsuario" placeholder="Ingrese Usuario" class="form-control">
+                    </form>
+                    <br>
+                    <form class="form-group">
+                        <input type="password" id="txtCredencial" placeholder="Ingrese Credencial" class="form-control">
+                    </form>
+                    <br>
+                    <br>
+                    <button class="btn btn-primary text-center">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="paginaMatricula">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <div class="row">
+                        <label class="fa-border">
+                            <button class="btn btn-primary">
+                                Matricula
+                            <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
+                            </button>
+                            <button class="btn btn-primary">
+                                Notas
+                                <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
+                            </button>
+                        </label>
+                    </div>
+                    <div class="row">
+                            <div class="col-xs-6 text-left">
+                                <h3>Cursos Matriculados</h3>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <br>
+                                <button class="btn btn-default ">Nuevo Curso</button>
+                            </div>
+                    </div>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr class="info">
+                                <td>Curso</td>
+                                <td>Seccion</td>
+                                <td>Docente</td>
+                                <td>DocenteHorario</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ST­232 Lenguajes de programación orientado a objetos</td>
+                                <td>V</td>
+                                <td>Rony Hancco</td>
+                                <td>Sábado 8:00 ­ 13:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
