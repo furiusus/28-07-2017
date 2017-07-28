@@ -13,7 +13,7 @@ var app=new Vue({
           this.notas=false;
           this.login=false
         },
-        
+
         ingresar : function () {
             if(this.usuario==71197765 && this.credencial==12345){
                 this.ocultar();
