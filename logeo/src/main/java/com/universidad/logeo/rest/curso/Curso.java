@@ -4,17 +4,26 @@ package com.universidad.logeo.rest.curso;
  * Created by furiusus on 7/29/17.
  */
 public class Curso {
-    private String curs;
+    private String curso;
     private String seccion;
     private String docente;
     private String horario;
+    private String usuario;
 
-    public String getCurs() {
-        return curs;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setCurs(String curs) {
-        this.curs = curs;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
     public String getSeccion() {

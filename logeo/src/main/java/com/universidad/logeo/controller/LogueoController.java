@@ -24,10 +24,13 @@ public class LogueoController {
         if(alumnoRequest.getUsuario().equals("71197765") && alumnoRequest.getCredencial().equals("12345")){
             alumnoResponse.setAdentro(true);
         }
-        else{
+        if(alumnoRequest.getUsuario().equals("09603244") && alumnoRequest.getCredencial().equals("54321")){
+            alumnoResponse.setAdentro(true);
+        }
+        /*else{
             alumnoResponse.setAdentro(false);
             alumnoResponse.setMensaje("Datos Incorrectos \n Ingrese nuevamente los datos por favor");
-        }
+        }*/
         return alumnoResponse;
     }
 

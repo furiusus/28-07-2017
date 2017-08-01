@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>PaginaLogeo</title>
@@ -49,7 +49,7 @@
                 <div class="col-xs-8 col-xs-offset-2">
                     <div class="row">
                         <label class="fa-border">
-                            <button class="btn btn-primary" v-on:click="verMatricula">
+                            <button class="btn btn-primary" v-on:click="verCursos">
                                 Matricula
                                 <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
                             </button>
@@ -78,30 +78,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>ST­232 Lenguajes de programación orientado a objetos</td>
-                            <td>V</td>
-                            <td>Rony Hancco</td>
-                            <td>Sábado 8:00 ­ 13:00</td>
-                        </tr>
-                        <tr>
-                            <td>CB­303 Física II </td>
-                            <td>U</td>
-                            <td>Oswaldo Arteaga</td>
-                            <td>Lunes 8:00 ­ 12:00</td>
-                        </tr>
-                        <tr>
-                            <td>CB­501 Matemática aplicada </td>
-                            <td>V</td>
-                            <td>Orestes Tapia</td>
-                            <td>Miércoles 14:00 ­ 17:00</td>
-                        </tr>
-                        <tr>
-                            <td>HS­405 Legislación Empresarial</td>
-                            <td>U</td>
-                            <td>Jazmín Antonacci</td>
-                            <td>Viernes 10:00 ­ 14:00</td>
-                        </tr>
+                        <tr is="cursos" v-for="curs in listaCurso" v-bind:curso="curs"></tr>
                         </tbody>
                     </table>
                 </div>
@@ -112,7 +89,7 @@
         <div class="container">
             <div class="row">
                 <label class="fa-border">
-                    <button class="btn btn-primary" v-on:click="verMatricula">
+                    <button class="btn btn-primary" v-on:click="verCursos">
                         Matricula
                         <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
                     </button>
